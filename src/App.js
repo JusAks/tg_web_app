@@ -4,7 +4,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      фівф adsassd
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <div>Just Aks development</div>
+      </header>
     </div>
   );
 }
