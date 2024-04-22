@@ -18,17 +18,17 @@ const Main = ()=>{
         <div className={ st.container }>
             { text && text }
             {/*<button onClick={()=>{setText(tg.viewportHeight)}}>send Data</button>*/ }
-            <div className={ st.data }>
+            { data && 
+                <>
+                    <div className={ st.data }>
                         <div>Your name: { data.first_name }</div>
                         <div>Your surname: { data.last_name ? data.last_name : "You haven't surname" }</div>
                         <div>Your username: @{ data.username }</div>
-            </div>
+                    </div>
+                </> 
+            }
             <button onClick={ knowYou }>Показать мои данные</button>
-            <button onClick={ ()=>{
-                tg.close ()
-            } }>Закрыть приложение
-            </button>
-
+            <button onClick={ ()=>{tg.close ()} }>Закрыть приложение</button>
         </div>
     );
 };
