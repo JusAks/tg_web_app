@@ -2,6 +2,33 @@
   background-size: 100% 100%;
   height: 100vh;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  
+  button{
+    min-height: 40px;
+    width: 50%;
+    padding: 10px;
+    margin-top: 10px;
+    background: white;
+    border: none;
+    border-radius: 10px;
+    
+    &:hover{
+      box-shadow: 0 0 10px white;
+    }
+  }
+}
+.data{
+  color: white;
+  background-color: rgba(0,0,0,0.6);
+  width: 80%;
+  padding: 20px;
+  margin-top: 10px;
+  font-size: 20px;
+  border-radius: 30px;
+  
 }
 @media (min-height: 601px){
   .container{
