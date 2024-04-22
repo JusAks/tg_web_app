@@ -9,9 +9,7 @@ const Main = ()=>{
     debugger
     return (
         <div className={st.container}>
-            <div>
-                {text && text}
-            </div>
+            {text&&text}
             <button onClick={()=>{setText(tg.viewportHeight)}}>send Data</button>
            
             
