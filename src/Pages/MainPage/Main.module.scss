@@ -1,7 +1,17 @@
 .container{
-  background: center/contain no-repeat url("https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/269599995/original/84be54af65ad9082056d6f824393d34d4be10f41/create-anime-background-cartoon-in-any-style.png");
   background-size: 100% 100%;
   height: 100vh;
   width: 100%;
-  
+}
+@media (min-height: 601px){
+  .container{
+    
+    background-image: url("https://worldofprintables.com/wp-content/uploads/2023/06/Street-Scene-Anime-Wallpapers.jpg");
+  }
+}
+@media (max-height: 600px){
+  .container{
+    
+    background-image:  url("https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/269599995/original/84be54af65ad9082056d6f824393d34d4be10f41/create-anime-background-cartoon-in-any-style.png");
+  }
 }
