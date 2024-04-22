@@ -1,15 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { routing } from './utils/Routing'
+import { useRoutes } from "react-router-dom";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <div>Just Aks development</div>
-      </header>
-    </div>
-  );
+  return useRoutes(routing)
 }
 
 export default App;
