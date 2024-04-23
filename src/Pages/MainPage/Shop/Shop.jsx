@@ -11,8 +11,8 @@ import richFish from './../../../images/shopImages/rich fish.jpg'
 import shashluchok from './../../../images/shopImages/shashluchok.jpg'
 import tortik from './../../../images/shopImages/tortik.jpg'
 import vanatsya from './../../../images/shopImages/vanatsya.jpg'
+import ShopModal from "../../../custom/modals/ShopModal";
 
-let tg =window.Telegram.WebApp;
 
 const shopItems =[
     {
@@ -71,7 +71,7 @@ const shopItems =[
         image: vanatsya
     },
 ]
-const ItemsList=({close,addItem,bucket})=>{
+const ItemsList=({close,addItem,bucket, openModal})=>{
     return(
         <div className={st.itemsListContainer}>
             <div className={ st.close }>
@@ -84,9 +84,17 @@ const ItemsList=({close,addItem,bucket})=>{
                     <div>{ el.name }</div>
                     <div>{el.price} $</div>
                     <button onClick={()=>{
+                        openModal();
                         let a = bucket.some(elem=>elem.name===el.name)
-                        if(a===false){addItem(prev=>[...prev,el])}
-                        if(a===true){tg.showAlert("Товар уже добален в корзину!")}
+                        if(a===false){ addItem(prev=>[...prev,{...el,kol:1}])}
+                        if(a===true){ addItem(prev=>prev.map(i=>{
+                            if(i.name!==el.name) return i
+                            if(i.name===el.name){
+                                return {...i,kol:i.kol+1}
+                            }
+                        }))
+                            
+                        }
                     }
                     }>Купить</button>
                 </div> )
@@ -99,12 +107,19 @@ const ItemsList=({close,addItem,bucket})=>{
 const Shop = ()=>{
     const [bucket,setBucket]=useState([])
     const [isOpen,setIsOpen]=useState(false)
+
+    const [isOpenModal, setIsOpenModal] = useState(false);
+    const handleOpen = () => {
+        setIsOpenModal(true);
+        setTimeout(()=>{setIsOpenModal(false)},1000);
+    };
+  
     
     return (
         <div className={ st.container }>
             {
                 isOpen 
-                    ? <ItemsList bucket={bucket} close={setIsOpen} addItem={setBucket}/>
+                    ? <ItemsList openModal={handleOpen} bucket={bucket} close={setIsOpen} addItem={setBucket}/>
                     : <>
                         <div>
                             <span>Доступные товары: </span>
@@ -116,7 +131,7 @@ const Shop = ()=>{
                                 {
                                     bucket?.length>0 
                                         ? <>
-                                        {bucket.map(el=><div>{el.name}</div>)}
+                                        {bucket.map(el=><div>{el.name} x{el.kol}</div>)}
                                         </>
                                         : <div>Ваша корзина пока пуста! </div>
                                 }
@@ -126,6 +141,7 @@ const Shop = ()=>{
                     </>
 
             }
+            <ShopModal isOpen={isOpenModal} handleClose={()=>{setIsOpenModal(false)}}/>
 
         </div>
     );

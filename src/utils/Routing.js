@@ -1,5 +1,6 @@
 import Main from "../Pages/MainPage/Main";
 import Shop from "../Pages/MainPage/Shop/Shop";
+import Test from "../Pages/TestPage/Test";
 
 export const routing = [
     {
@@ -16,7 +17,7 @@ export const routing = [
             },
             {
                 path:'test',
-                element:<div>Test</div>
+                element:<Test/>
             },
         ]
     }

@@ -1,0 +1,29 @@
+
+.wrapper{
+  background-color: rgba(255,255,255,0.8);
+  box-shadow: 0 0 5px white;
+  max-width: 80%;
+  width: 100%;
+  min-height: 20%;
+  border-radius: 30px;
+  padding: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  justify-content: space-around;
+  .content{
+    font-size: 25px;
+  }
+  button{
+    min-height: 30px;
+    width: 50%;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 5px lightgrey;
+    background-color: darkgray;
+  }
+}
