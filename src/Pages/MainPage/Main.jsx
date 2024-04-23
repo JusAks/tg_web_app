@@ -1,21 +1,27 @@
 import React , { useEffect , useState } from 'react';
 import st from './Main.module.scss'
+import { NavLink , Outlet } from "react-router-dom";
 
 let tg =window.Telegram.WebApp;
 const Main = ()=>{
-    const [data,setData] = useState(null)
+/*    const [data,setData] = useState(null)*/
     useEffect ( ()=>{
         tg.ready();
         tg.expand();
-        
     } , [] );
-    const knowYou=()=>{
+  /*  const knowYou=()=>{
         setData(tg.initDataUnsafe.user)
-    }
+    }*/
+   
     return (
         <div className={ st.container }>
-            
-            { data && 
+            <div className={st.navBar}>
+                <NavLink to='' end>Shop</NavLink>
+                <NavLink to='game'>Game</NavLink>
+                <NavLink to='test'>Test</NavLink>
+            </div>
+            <Outlet/>
+            {/*{ data && 
                 <>
                     <div className={ st.data }>
                         <div>Your name: { data.first_name ? data.first_name:"No first_Name" }</div>
@@ -25,7 +31,7 @@ const Main = ()=>{
                 </> 
             }
             <button onClick={ knowYou }>Показать мои данные</button>
-            <button onClick={ ()=>{tg.close ()} }>Закрыть приложение</button>
+            <button onClick={ ()=>{tg.close ()} }>Закрыть приложение</button>*/}
         </div>
     );
 };
