@@ -72,11 +72,6 @@ const shopItems =[
     },
 ]
 const ItemsList=({close,addItem,bucket})=>{
-    let params={
-        title:"test Pop Up",
-        message:"pop Up message text here",
-        buttons:[{type:"close"}]
-    }
     return(
         <div className={st.itemsListContainer}>
             <div className={ st.close }>
