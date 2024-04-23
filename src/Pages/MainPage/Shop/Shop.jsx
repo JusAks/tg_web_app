@@ -89,12 +89,10 @@ const ItemsList=({close,addItem,bucket, openModal})=>{
                         if(a===false){ addItem(prev=>[...prev,{...el,kol:1}])}
                         if(a===true){ addItem(prev=>{
                             return prev.map(i=>{
-                                if(i.name!==el.name) {
-                                    return i
-                                }
                                 if(i.name===el.name){
                                     return {...i,kol:i.kol+1}
                                 }
+                                else return i
                             })
                             
                             }
