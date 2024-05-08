@@ -1,29 +1,59 @@
-
-.wrapper{
-  background-color: rgba(255,255,255,0.8);
-  box-shadow: 0 0 5px white;
-  max-width: 80%;
-  width: 100%;
-  min-height: 20%;
-  border-radius: 30px;
-  padding: 15px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+.container{
+  flex: 1;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  place-items: center;
-  justify-content: space-around;
-  .content{
-    font-size: 20px;
+  justify-content: space-between;
+  max-height: 100%;
+  .fightArena{
+    background-color: lightgrey;
+    height: 100%;
+    position: relative;
+    .test{
+      background-color: red;
+      width: fit-content;
+    }
+    .boss{
+      background-color: black;
+      color: white;
+      width: 20%;
+      height: 15%;
+      padding: 5px;
+      position: absolute;
+      top: 5px;
+      left: 40%;
+      
+    }
+    .hero1{
+      position: absolute;
+      top: 80%;
+      left: 5%;
+      background-color: yellow;
+      height: 15%;
+      width: 20%;
+      z-index: 2;
+      opacity: 0.8;
+    }
+    .hero2{
+      position: absolute;
+      top: 80%;
+      right: 5%;
+      background-color: yellow;
+      height: 15%;
+      width: 20%;
+     
+    }
   }
-  button{
-    min-height: 30px;
-    width: 50%;
-    border-radius: 10px;
-    border: none;
-    box-shadow: 0 0 5px lightgrey;
-    background-color: darkgray;
+  .fightBut{
+    min-height: 50px;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    justify-content: space-around;
+    button{
+      min-height: 30px;
+      width: 30%;
+      margin: 0;
+    }
   }
 }

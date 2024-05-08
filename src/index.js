@@ -4,13 +4,16 @@ import App from './App';
 import './index.css'
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
+import { TonConnectUIProvider } from "@tonconnect/ui-react";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+      <React.StrictMode>
+        <TonConnectUIProvider manifestUrl='https://majestic-kheer-456016.netlify.app/tonconnect-manifest.json'>
+          <App />
+        </TonConnectUIProvider>
+      </React.StrictMode>
     </BrowserRouter>
 );
 

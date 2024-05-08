@@ -1,6 +1,8 @@
 import Main from "../Pages/MainPage/Main";
 import Shop from "../Pages/MainPage/Shop/Shop";
 import Test from "../Pages/TestPage/Test";
+import Game from "../Pages/GamePage/Game";
+import Secondary from "../Pages/Secondary/Secondary";
 
 export const routing = [
     {
@@ -13,12 +15,16 @@ export const routing = [
             },
             {
                 path:'game',
-                element:<div>Game</div>
+                element:<Game/>
             },
             {
                 path:'test',
                 element:<Test/>
             },
         ]
+    },
+    {
+        path : 'admin',
+        element : <Secondary/>
     }
 ]

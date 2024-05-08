@@ -1,0 +1,31 @@
+.container{
+  padding: 10px;
+  flex: 1;
+  overflow: hidden;
+  background-color: darkgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .bossLine{
+    min-height: 80px;
+    position: relative;
+    
+    .bossNormal{
+      position: absolute;
+      top: 5%;
+      left: 40%;
+      background-color: black;
+      color: white;
+      height: 90%;
+      width: 20%;
+      place-content: center;
+      text-align: center;
+      z-index: 1;
+      transition: all 0.5s;
+     &:hover{
+       top: 0;
+       background-color: lightgrey;
+     }
+    }
+  }
+}
