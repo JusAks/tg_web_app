@@ -71,6 +71,7 @@ const Login = ()=>{
             <div className='loginStatus'>
                 {isAuth?'Welcome! '+UIAddress: 'Not Authorized!'}
             </div>
+            <div>{ wallet && wallet.name + wallet.account.chain }<img height={50} src={ wallet.imageUrl } alt=""/></div>
             <div className='loginAction'>
                 <button disabled={isAuth} onClick={ connect }>Connect Wallet</button>
                 <button onClick={  testFunk2}>test button</button>
