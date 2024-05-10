@@ -1,5 +1,5 @@
 import React , { useEffect , useState } from 'react';
-import { useTonAddress , useTonConnectUI } from "@tonconnect/ui-react";
+import { useTonAddress , useTonConnectUI , useTonWallet } from "@tonconnect/ui-react";
 
 /*const secondaryAddress="0QAGrOtKF4KUWwWJD49KgjF8qSlo7083762sSfMTwkLZTqoN"
 const secondaryAddress1="0:977e12d945a67a3a48b63ca98f18efb8064f4277f6ecec53417272e6e642396c"*/
@@ -10,12 +10,12 @@ const Login = ()=>{
     const address = useTonAddress()
    /* const addressTr = useTonAddress(false)*/
     const UIAddress = address.slice(0,4)+"..."+address.slice(-4)
-    /*const wallet = useTonWallet();
+    /*
     const [info,setInfo]=useState()*/
+    const wallet = useTonWallet();
     const [isAuth,setIsAuth]=useState(false)
-    
     useEffect ( ()=>{
-        setOptions({ language: "ru" });
+        setOptions({ language: "ru"})
         if(tonConnectUI.account){
             setIsAuth(true)
         }
@@ -25,7 +25,7 @@ const Login = ()=>{
     } , [tonConnectUI.account,setOptions] );
     
     const testFunk2= async ()=>{
-        console.log(address)
+        console.log(wallet)
        /*console.log(addressTr)
         tonConnectUI.openSingleWalletModal("Tonkeeper")
         
@@ -45,7 +45,6 @@ const Login = ()=>{
                 amount: "20000000" //Toncoin in nanotons
             }
         ]
-
     }
     const testTransaction= async ()=>{
         setOptions({ language: "en" });

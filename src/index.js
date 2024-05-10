@@ -10,7 +10,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
       <React.StrictMode>
-        <TonConnectUIProvider manifestUrl='https://majestic-kheer-456016.netlify.app/tonconnect-manifest.json'>
+        <TonConnectUIProvider
+            manifestUrl='https://majestic-kheer-456016.netlify.app/tonconnect-manifest.json'
+            actionsConfiguration={{
+                twaReturnUrl: 'https://t.me/testWebAppAks_bot'
+            }}>
           <App />
         </TonConnectUIProvider>
       </React.StrictMode>
