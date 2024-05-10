@@ -22,7 +22,7 @@ const Login = ()=>{
         if(tonConnectUI.account === null){
             setIsAuth(false)
         }
-    } , [setOptions] );
+    } , [tonConnectUI.account,setOptions] );
     
     const testFunk2= async ()=>{
         console.log(address)
