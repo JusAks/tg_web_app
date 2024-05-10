@@ -1,5 +1,5 @@
 import React , { useEffect , useState } from 'react';
-import { useTonAddress , useTonConnectUI , useTonWallet } from "@tonconnect/ui-react";
+import { TonConnectButton , useTonAddress , useTonConnectUI , useTonWallet } from "@tonconnect/ui-react";
 
 /*const secondaryAddress="0QAGrOtKF4KUWwWJD49KgjF8qSlo7083762sSfMTwkLZTqoN"
 const secondaryAddress1="0:977e12d945a67a3a48b63ca98f18efb8064f4277f6ecec53417272e6e642396c"*/
@@ -84,6 +84,7 @@ const Login = ()=>{
                 <button onClick={  testFunk2}>test button</button>
                 <button disabled={!isAuth} onClick={  ()=>{tonConnectUI.disconnect()}}>disconnect</button>
                 <button disabled={!isAuth} onClick={testTransaction}>send 0.2 ton</button>
+                <TonConnectButton/>
             </div>
         </div>
     );
