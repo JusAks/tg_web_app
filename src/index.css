@@ -3,3 +3,6 @@ body{
     padding: 0;
     
 }
+div[data-tc-wallets-modal-container="true"]{
+    padding: 0 10px;
+}
