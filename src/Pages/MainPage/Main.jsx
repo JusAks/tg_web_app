@@ -13,7 +13,7 @@ const Main = ()=>{
           setData(tg.initDataUnsafe.user)
       }*/
 
-    const work = true;
+    const work = false;
 
     return (
         <>
